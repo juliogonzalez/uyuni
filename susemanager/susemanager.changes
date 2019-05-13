@@ -1,3 +1,5 @@
+- Fix list of packages for bootstrap scripts when features are enabled
+  for an activation key used by traditional clients (bsc#1134876)
 - Make swap files readable only by root (bsc#1131954, CVE-2019-3684)
 - convert cobbler files to new format during migration
 - add dbus-lib to RES6 bootstrap repo (bsc#1132343)

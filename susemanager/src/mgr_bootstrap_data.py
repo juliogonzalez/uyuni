@@ -6,6 +6,10 @@ PKGLIST10 = [
     "libaugeas0",
     "libnewt0_52",
     "libzypp",
+    "mgr-cfg|rhncfg",
+    "mgr-cfg-clients|rhncfg-client",
+    "mgr-cfg-actions|rhncfg-actions",
+    "mgr-virtualization-host|rhn-virtualization-host"
     "newt",
     "openssl",
     "perl-WWW-Curl",
@@ -42,6 +46,10 @@ PKGLIST11 = [
     "libxml2-python",
     "libzypp",
     "newt",
+    "mgr-cfg|rhncfg",
+    "mgr-cfg-clients|rhncfg-client",
+    "mgr-cfg-actions|rhncfg-actions",
+    "mgr-virtualization-host|rhn-virtualization-host"
     "openssl",
     "python",
     "python-dmidecode",
@@ -105,6 +113,10 @@ PKGLIST12 = [
     "python-libxml2",
     "libzypp",
     "newt",
+    "mgr-cfg|rhncfg",
+    "mgr-cfg-clients|rhncfg-client",
+    "mgr-cfg-actions|rhncfg-actions",
+    "mgr-virtualization-host|rhn-virtualization-host"
     "python",
     "python-cffi",
     "python-cryptography",
@@ -237,6 +249,10 @@ RES6 = [
     "suseRegisterInfo",
     "python2-suseRegisterInfo",
     "python2-hwdata",
+    "mgr-cfg|rhncfg",
+    "mgr-cfg-clients|rhncfg-client",
+    "mgr-cfg-actions|rhncfg-actions",
+    "mgr-virtualization-host|rhn-virtualization-host"
 ]
 
 RES7 = [
@@ -282,6 +298,10 @@ RES7 = [
     "suseRegisterInfo",
     "python2-suseRegisterInfo",
     "python2-hwdata",
+    "mgr-cfg|rhncfg",
+    "mgr-cfg-clients|rhncfg-client",
+    "mgr-cfg-actions|rhncfg-actions",
+    "mgr-virtualization-host|rhn-virtualization-host"
 ]
 
 PKGLIST15 = [
@@ -289,6 +309,10 @@ PKGLIST15 = [
     "libnewt0_52",
     "libslang2",
     "newt",
+    "mgr-cfg|rhncfg",
+    "mgr-cfg-clients|rhncfg-client",
+    "mgr-cfg-actions|rhncfg-actions",
+    "mgr-virtualization-host|rhn-virtualization-host"
     "python3-asn1crypto",
     "python3-cffi",
     "python3-cryptography",
