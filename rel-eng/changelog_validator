@@ -1,0 +1,88 @@
+#!/usr/bin/python3
+import os
+import unidiff
+
+"""
+    def validate(self):
+
+        for patched_file in self.changelog_patchset:
+            print(patched_file.path)
+            more_top_changes = True
+            for hunk in patched_file:
+                for line in hunk:
+                    if line.is_added:
+                        print(line.target_line_no)
+                    else:
+                        more_top_changes = False
+"""
+                    
+
+
+def load_patchset(path, encoding):
+    return unidiff.PatchSet.from_filename(path, encoding)
+
+
+def paths_for_packages(packages_path='packages'):
+    packages = {}
+    for package in os.listdir(packages_path):
+        if package[0] == '.':
+            continue
+        with open(packages_path + '/' + package, 'r') as content:
+            package_contents = content.readline().rstrip().split(' ')[1]
+        packages[package] = package_contents
+    return packages
+
+
+def find_missing_changelogs(patchset, packages):
+    needed_changelog = {}
+    error = False
+    for patched_file in patchset:
+        for package_name, package_path in packages.items():
+            if package_path in patched_file.path:
+                if patched_file.path.rsplit('.')[1] == 'changes':
+                    needed_changelog[package_name] = False
+                else:
+                    if package_name not in needed_changelog:
+                        needed_changelog[package_name] = True
+    for package_name, need_changelog in needed_changelog.items():
+         if need_changelog:
+             print("ERROR: Changelog missing at %s%s.changes" % (packages[package_name], package_name))
+             error = True
+    return error
+
+
+def find_removed_changelog_entries(patchset):
+    for patched_file in patchset:
+        if patched_file.removed != 0
+            print("ERROR: You are removing entries from %s" % patched_file.path)
+
+
+def find_changed_changelog_entries(patchset):
+    for patched_file in patchset:
+        if patched_file.changed != 0
+            print("ERROR: You are changing entries at %s" % patched_file.path)
+
+
+def validate_changelog_additions:
+    for patched_file in self.changelog_patchset:
+        more_top_changes = True
+        for hunk in patched_file:
+            nline = 0
+            for line in hunk:
+                if line.is_added:
+                    if not more_top_changes or line.target_line_no != nline + 1:
+                        print("ERROR: You are not adding changes on top of %s!" % patched_file.path))
+                        break
+                    nline = line.target_line_no
+                else:
+                    more_top_changes = False
+
+error = False
+patchset = load_patchset(path='3578.diff', encoding='iso8859_15')
+packages = paths_for_packages()
+error = find_missing_changelogs(patchset, packages)
+error = find_removed_changelog_entries(patchset)
+error = find_changed_changelog_entries(patchset)
+
+
+
